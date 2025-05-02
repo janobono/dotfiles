@@ -37,41 +37,15 @@ set showmatch " show the matching part of pairs [] {} and ()
 " Keymaps
 " ========================================
 
-" Set leader key
-let mapleader = " "
-let maplocalleader = " "
-
-" Disable the spacebar key's default behavior in Normal and Visual modes
-nnoremap <Space> <Nop>
-vnoremap <Space> <Nop>
-
-" Allow moving the cursor through wrapped lines with j, k
-nnoremap <expr> k v:count == 0 ? 'gk' : 'k'
-nnoremap <expr> j v:count == 0 ? 'gj' : 'j'
-
 " clear highlights
 nnoremap <Esc> :noh<CR>
-
-" save file
-nnoremap <C-s> :w<CR>
 
 " delete single character without copying into register
 nnoremap x "_x
 
-" Vertical scroll and center
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
-
 " Find and center
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-" increment/decrement numbers
-nnoremap <leader>+ <C-a>
-nnoremap <leader>- <C-x>
-
-" toggle line wrapping
-nnoremap <leader>lw :set wrap!<CR>
 
 " Stay in indent mode
 " vnoremap < <gv
@@ -79,14 +53,3 @@ nnoremap <leader>lw :set wrap!<CR>
 
 " Keep last yanked when pasting
 vnoremap p "_dP
-
-" Explicitly yank to system clipboard (highlighted and entire row)
-noremap <leader>y "+y
-noremap <leader>Y "+Y
-
-" Sync clipboard with OS
-if system('uname -s') == "Darwin\n"
-  set clipboard=unnamed "OSX
-else
-  set clipboard=unnamedplus "Linux
-endif
