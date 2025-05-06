@@ -10,6 +10,7 @@ set relativenumber " Use relative line numbers
 set expandtab " Convert tabs to spaces
 set smartindent " Smart indentation
 set showtabline=2 " Always show tab line
+set clipboard+=unnamed
 
 " ========================================
 " Keymaps
